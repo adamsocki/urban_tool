@@ -8,6 +8,8 @@ import { WrappedFeatureCollectionList } from "app/components/wrapped_feature_col
 import { CompatibilityCheck } from "app/components/compatibility_check";
 import { DropIndex } from "app/components/drop_index";
 import { formatTitle } from "app/lib/utils";
+import { CreatePlanningProject } from "app/components/create_planning_project";
+import { PlanningProjectList } from "app/components/planning_project_list";
 
 export const featureRowColumns = "40px 1fr 1fr 1fr 80px";
 
@@ -15,6 +17,15 @@ function IndexHeader() {
   return (
     <div className="flex justify-between items-center pt-0 pb-8 gap-x-2">
       <CreateMap />
+    </div>
+  );
+}
+
+function PlanningProjectsHeader() {
+  return (
+    <div className="flex justify-between items-center pt-8 pb-4 gap-x-2 border-t mt-8">
+      <h2 className="text-xl font-semibold">Planning Projects</h2>
+      <CreatePlanningProject />
     </div>
   );
 }
@@ -31,6 +42,9 @@ const PlacemarkIndex: BlitzPage = () => {
 
       <WrappedFeatureCollectionList />
       <DropIndex />
+
+      <PlanningProjectsHeader />
+      <PlanningProjectList />
     </>
   );
 };
